@@ -31,7 +31,7 @@ function BusStop({ stop }) {
       <h3 id="stopTitle">{stop.name}</h3>
       {busData ? (
         busData
-          .slice(0, 5)
+          .slice(0, maxShownBusses)
           .map((value, index) => <Bus bus={value} key={index} />)
       ) : (
         <p>"Loading bus data..."</p>
