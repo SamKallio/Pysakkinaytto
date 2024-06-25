@@ -43,7 +43,7 @@ function SearchStopData() {
         min="0"
         onChange={() => setCurrentNumber(event.target.value)}
       ></input>
-      <input type="submit" value="Etsi"></input>
+      <input id="searchBtn" type="submit" value="Etsi"></input>
     </form>
   );
 }

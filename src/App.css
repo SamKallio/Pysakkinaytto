@@ -1,16 +1,22 @@
+:root {
+  --box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  --border-style: 1px solid rgba(0, 0, 0, 0.25);
+}
+
 .container {
   margin: auto;
   margin-top: 20px;
   max-width: 360px;
   min-height: 200px;
   background: rgb(252, 196, 0);
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: var(--border-style);
   padding: 6px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  box-shadow: var(--box-shadow);
 }
 
 #stopHeader {
@@ -18,7 +24,7 @@
   margin: 6px;
   font-weight: bolder;
   text-align: center;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
 }
 
 #stopScreen {
@@ -27,19 +33,37 @@
   margin: auto;
   min-height: 140px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: var(--border-style);
   display: flex;
+  box-shadow: var(--box-shadow);
 }
 
 #searchBox {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: row;
   gap: 6px;
   width: 90%;
-  border-radius: 8px;
 }
 
 #searchInput {
   padding-left: 8px;
   height: 20px;
+  border-radius: 8px;
+  border: var(--border-style);
+  box-shadow: var(--box-shadow);
+}
+
+#searchBtn {
+  background: rgb(252, 235, 174);
+  border-radius: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#searchBtn:hover {
+  background: rgb(255, 247, 215);
 }
