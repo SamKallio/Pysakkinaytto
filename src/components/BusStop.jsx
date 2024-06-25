@@ -7,22 +7,22 @@ const maxShownBusses = 5;
 function BusStop({ stop }) {
   const [busData, setBusData] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `http://data.foli.fi/siri/stops/${stop.id}/format`
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        if (data) setBusData(data.result);
-      } catch (error) {
-        console.error("Error while fetching:", error);
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `http://data.foli.fi/siri/stops/${stop.id}/format`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
-    };
+      const data = await response.json();
+      if (data) setBusData(data.result);
+    } catch (error) {
+      console.error("Error while fetching:", error);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, [stop]);
 
@@ -36,6 +36,17 @@ function BusStop({ stop }) {
       ) : (
         <p>"Loading bus data..."</p>
       )}
+      <button
+        onClick={fetchData}
+        style={{
+          margin: "auto",
+          marginTop: "40px",
+          padding: "6px",
+          width: "60px",
+        }}
+      >
+        Päivitä
+      </button>
     </>
   );
 }
