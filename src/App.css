@@ -21,7 +21,10 @@
 
 #stopHeader {
   color: white;
-  margin: 6px;
+  margin-left: 6px;
+  margin-top: 6px;
+  margin-right: 0px;
+  margin-bottom: 0px;
   font-weight: bolder;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
@@ -33,9 +36,16 @@
   margin: auto;
   min-height: 140px;
   border-radius: 8px;
+  padding: 4px;
   border: var(--border-style);
   display: flex;
+  flex-direction: column;
   box-shadow: var(--box-shadow);
+}
+
+#stopTitle {
+  margin: 10px;
+  color: rgb(252, 196, 0);
 }
 
 #searchBox {
@@ -66,4 +76,25 @@
 
 #searchBtn:hover {
   background: rgb(255, 247, 215);
+}
+
+#busContainer {
+  margin-left: 10px;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.busText {
+  margin: 2px;
+  color: white;
+  flex-basis: 33%;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
 }

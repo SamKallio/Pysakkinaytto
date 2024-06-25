@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function SearchStopData() {
+function SearchStopData({ setCurrentStop }) {
   const [currentNumber, setCurrentNumber] = useState(0);
 
   const searchStop = (e) => {
@@ -18,12 +18,7 @@ function SearchStopData() {
         .then((data) => {
           if (data.hasOwnProperty(currentNumber)) {
             const stopData = data[currentNumber];
-            console.log(
-              "stopNumber: " +
-                currentNumber +
-                " stopName: " +
-                stopData.stop_name
-            );
+            setCurrentStop({ id: currentNumber, name: stopData.stop_name });
           } else {
             console.log("Couldn't find data for this stop number");
           }
