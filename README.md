@@ -1,0 +1,1 @@
+# Pysäkkinäyttö (React+Vite)
