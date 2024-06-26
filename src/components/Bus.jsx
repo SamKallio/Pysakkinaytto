@@ -3,10 +3,13 @@ import { getTimeDifferenceInMinutes } from "../assets/helperFunc";
 
 function Bus({ bus }) {
   const arrivedTime = bus.aimedarrivaltime.slice(10);
+  const expectedArrivalTime = bus.expectedarrivaltime.slice(10);
+
   const minutesRemaining = getTimeDifferenceInMinutes(
     arrivedTime,
-    bus.expectedarrivaltime.slice(10)
+    expectedArrivalTime
   );
+
   //At the moment 0 is shown as estimated time in minutes for arrival if bus has not started moving yet, it is because expectedarrivaltime defaults to aimedarrivaltime. Could filter out those busses if wanted.
   return (
     <div id="busContainer">

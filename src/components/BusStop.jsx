@@ -16,7 +16,8 @@ function BusStop({ stop }) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      if (data) setBusData(data.result);
+      if (data)
+        setBusData(data.result.filter((busData) => busData.monitored === true));
     } catch (error) {
       console.error("Error while fetching:", error);
     }
